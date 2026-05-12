@@ -1,0 +1,20 @@
+.btn-1{
+    background-color: $color-black;
+}
+
+.btn-2{
+    background-color: $color-brown;
+}
+
+
+.buttons:hover{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    .btn-1{
+        background-color: $color-brown;
+        border: none;
+    }   
+
+    .btn-2{
+        background-color: $color-black;
+    }
+}

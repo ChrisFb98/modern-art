@@ -1,0 +1,619 @@
+@import './abstracts/abstracts';
+@import './vendors/vendors';
+@import './base/base';
+@import './components/components';
+@import './layout/layout';
+@import './pages/pages';
+@import './themes/themes';
+@import 'settings';
+
+body{
+    justify-items: center;
+    background-color: rgb(236, 244, 252);
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 375px;
+    height: 2811px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    @include breakpoint(tablet){
+        width: 768px;
+        height: 2287px;
+    }
+    @include breakpoint(desktop){
+        width: 1440px;
+        height: 2554px;
+    }
+    .old-lady{
+        margin-bottom: 20px;
+        @include breakpoint(tablet){
+            display: none;
+        }
+        @include breakpoint(desktop){
+            display: none;
+        }
+    }
+    .old-lady-tablet{
+        display: none;
+        @include breakpoint(tablet){
+            display:block;
+            width: 437px;
+            height: 700px;
+            position: absolute;
+            z-index: 0;
+        }
+        @include breakpoint(desktop){
+            display: none;
+        }
+    }
+    .old-lady-desk{
+        display: none;
+        @include breakpoint(desktop){
+            display: flex;
+            width: 540px;
+            height: 800px;
+            position: absolute;
+            right: 400px;
+            z-index: 0;
+        }
+    }
+    .old-lady-wrapper{
+            @include breakpoint(desktop){
+            display: flex;
+            width: 540px;
+            height: 800px;
+            &::before{
+                content: "";
+                display: block;
+                width: 540px;
+                height: 800px;
+                background-color: black;
+                position: absolute;
+                left: 0px;
+                z-index: 0;
+            }
+        }
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        position: relative;
+        @include breakpoint(tablet){
+            width: 339px;
+            height: 410px;
+            margin-top: 145px;
+            margin-left: 389px;
+            margin-bottom: 250px;
+        }
+        @include breakpoint(desktop){
+            margin-left: 220px;
+            margin-top: -640px;
+            margin-bottom: 300px;
+            
+        }
+        &-title{
+            font-weight: 900;
+            font-size: 60px;
+            width: 340px;
+            font-family: $big-shoulders-font;
+            padding-top: 0;
+            padding-bottom: 0;
+            @include breakpoint(desktop){
+                color: white;
+                font-weight: 900;
+                font-size: 96px;
+                width: 520px;
+            }
+        }
+        &-desc{
+            margin-top: 30px;
+            padding: 0px 20px 20px 0px;
+            font-weight: 200;
+            font-size: 24px;
+            font-family: $outfit-font;
+            @include breakpoint(tablet){
+                font-size: 18px;
+            }
+            @include breakpoint(desktop){
+                font-size: 22px;
+                font-weight: 200;
+                width: 350px;
+                margin-left: 730px;
+                margin-top: -180px;
+                line-height: 1.5;
+            }
+        }
+        .buttons{
+            width: 250px;
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 130px;
+            @include breakpoint(desktop){
+                margin-left: 730px;
+                margin-top: 40px;
+            }
+            .btn-location{
+                width: 204px;
+                height: 72px;
+                font-size: 20px;
+                font-family: $big-shoulders-font;
+                letter-spacing: 3.64px;
+                color: white;
+            }
+            .btn-arrow{
+                padding: 20px;
+            }
+        }
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(tablet){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+        }
+        @include breakpoint(desktop){
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            column-gap: 150px;
+        }
+        &-img{
+            width: 343px;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(tablet){
+                grid-column: 2 / span 1;
+                width: 398px;
+                height: 400px;
+                margin-right: 30px;
+            }
+            @include breakpoint(desktop){
+                display: none;
+            }
+        }
+        &-img-desk{
+            display: none;
+                @include breakpoint(desktop){
+                display: flex;
+                width: 635px;
+                width: 400px;
+                grid-column: 2 / span 1;
+                grid-row: 1/ span 1;
+            }
+        }
+        &-container{
+            @include breakpoint(tablet){
+                    grid-column: 1 / span 1;
+                    grid-row: 1 / span 1;
+                    margin-left: 30px;
+            }
+            @include breakpoint(desktop){
+                grid-column: 1 / span 1;
+                grid-row: 1 / span 1;
+            }
+        }
+        &-title{
+            font-size: 60px;
+            font-weight: 900;
+            font-family: $big-shoulders-font;
+            width: 300px;
+            margin-left: 20px;
+            margin-right: auto;
+            margin-top: 20px;
+            @include breakpoint(tablet){
+                width: 203px;
+                line-height: 1.0;
+                font-size: 45px;
+            }
+            @include breakpoint(desktop){
+                margin-top: 0;
+            }
+        }
+        &-desc{
+            width: 313px;
+            font-size: 18px;
+            font-weight: 100;
+            font-family: $outfit-font;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            @include breakpoint(tablet){
+                width: 223px;
+                font-weight: 200;
+                line-height: 1.8;
+            }
+            @include breakpoint(desktop){
+                width: 350px;
+                font-size: 22px;
+                line-height: 1.4
+            }
+        }
+    }
+    .gallery{
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(tablet){
+            width: 689px;
+            height: 720px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-top: 15px;
+            margin-bottom: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 5px;
+        }
+        @include breakpoint(desktop){
+            display: grid;
+            grid-template-columns: 635px 1fr;
+            grid-template-rows: 320px 345px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 160px;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        &-img1{
+            width: 343px; 
+            height: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+            @include breakpoint(tablet){
+                grid-template-columns: 1 / span 1;
+                grid-row: 1 / span 2;
+                width: 398px;
+                height: 720px;
+            }
+            @include breakpoint(desktop){
+                grid-template-columns: 1 / span 1;
+                grid-row: 1 / span 2;
+                width: 635px;
+                height: 720px;
+            }
+        }
+        &-img2{
+            width: 343px; 
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+            @include breakpoint(tablet){
+                display: none;
+            }
+            @include breakpoint(desktop){
+                display: none;
+            }
+        }
+        &-img2-tablet{
+            display: none;
+            @include breakpoint(tablet){
+                display: flex;
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 1;
+                width: 280px;
+                height: 313px;
+            }
+            @include breakpoint(desktop){
+                display: none;
+            }
+        }
+        &-img2-desk{
+            display: none;
+            @include breakpoint(desktop){
+                display: flex;
+            }
+        }
+        &-article{
+            display: flex;
+            width: 343px;
+            height: 293px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 110px;
+            flex-direction: column;
+            background-color: black;
+            color: white;
+            padding: 30px 20px;
+            @include breakpoint(tablet){
+                width: 280px;
+                height: 396px;
+                padding: 80px 40px;
+                margin-top: -45px;
+            }
+            @include breakpoint(desktop){
+                width: 445px;
+                height: 377px;
+                padding: 60px 80px;
+            }
+            &-title{
+                font-size: 50px;
+                font-weight: 900;
+                font-family: $big-shoulders-font;
+                line-height: 1;
+                margin-bottom: 30px;
+                @include breakpoint(tablet){
+                    width: 223px;
+                }
+                @include breakpoint(desktop){
+                    font-size: 60px;
+                    font-weight: 900;
+                }
+            }
+            &-desc{
+                font-size: 18px;
+                font-weight: 100;
+                font-family: $outfit-font;
+                line-height: 1.4;
+                @include breakpoint(tablet){
+                    width: 223px;
+                }
+                @include breakpoint(desktop){
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .footer{
+        background-color: black;
+        color: white;
+        padding: 30px;
+        @include breakpoint(tablet){
+            display: flex;
+            align-items: baseline;
+            width: 768px;
+            height: 216px;
+        }
+        @include breakpoint(desktop){
+            display: flex;
+            align-items: baseline;
+        }
+        &-title{
+            width: 250px;
+            font-size: 20px;
+            @include breakpoint(tablet){
+                width: 200px;
+            }
+            @include breakpoint(desktop){
+                width: 200px;
+                margin-left: 100px;
+                font-size: 24px;
+            }
+        }
+        &-desc{
+            width: 311px;
+            font-size: 16px;
+            font-weight: 100;
+            font-family: $outfit-font;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            margin-top: 30px;
+            @include breakpoint(tablet){
+                width: 281px;
+                font-size: 16px;
+                margin-right: 100px;
+            }
+            @include breakpoint(desktop){
+                width: 430px;
+                font-size: 18px;
+                margin-left: 100px;
+                margin-right: 200px;
+            }
+        }
+        .facebook{
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            @include breakpoint(desktop){
+                margin-left: 10px;
+            }
+        }
+        .instagram{
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            @include breakpoint(desktop){
+                margin-left: 10px;
+            }
+        }
+        .twiter{
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            @include breakpoint(desktop){
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.location-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    position: relative;
+    @include breakpoint(tablet){
+        width: 768px;
+    }
+    @include breakpoint(desktop){
+        width: 1440px;
+    }
+    .back-to-home{
+        display: flex;
+        position: absolute;
+        left: 30px;
+        @include breakpoint(desktop){
+            left: 160px;
+        }
+        .arrow-btn{
+            width: 56px;
+            height: 62px;
+            padding: 18px 24px;
+            transform: rotate(180deg);
+        }
+        .back-home{
+            width: 208px;
+            height: 62px;
+            font-size: 20px;
+            color: white;
+            font-family: $big-shoulders-font;
+            border: none;
+        }
+    }
+    iframe{
+        width: 375px;
+        height: 550px;
+        @include breakpoint(tablet){
+            width: 768px;
+        }
+        @include breakpoint(desktop){
+            width: 1440px;
+            height: 600px;
+        }
+    }
+    .about{
+        padding: 50px 20px;
+        background-color: black;
+        @include breakpoint(tablet){
+            display: flex;
+        }
+        @include breakpoint(desktop){
+            display: flex;
+            height: 548px;
+            padding: 90px 150px;
+        }
+        &-title{
+            font-family: $big-shoulders-font;
+            font-weight: 900;
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: white;
+            @include breakpoint(tablet){
+                margin-left: 20px;
+                margin-right: 60px;
+            }
+            @include breakpoint(desktop){
+                font-size: 70px;
+                margin-right: 300px;
+            }
+        }
+        &-street-name{
+            font-family: $big-shoulders-font;
+            font-weight: 900;
+            color: $color-brown;
+            margin-bottom: 20px;
+        }
+        &-city{
+            font-size: 18px;
+            font-family: $outfit-font;
+            color: white;
+            font-weight: 200;
+            @include breakpoint(desktop){
+                font-size: 22px;
+                font-weight: 100;
+            }
+        }
+        &-lic{
+            font-size: 18px;
+            font-family: $outfit-font;
+            color: white;
+            font-weight: 200;
+            @include breakpoint(desktop){
+                font-size: 22px;
+                font-weight: 100;
+            }
+        }
+        &-country{
+            font-size: 18px;
+            font-family: $outfit-font;
+            color: white;
+            font-weight: 200;
+            @include breakpoint(desktop){
+                font-size: 22px;
+                font-weight: 100;
+            }
+        }
+        &-desc{
+            font-size: 18px;
+            font-family: $outfit-font;
+            color: white;
+            margin-top: 25px;
+            font-weight: 200;
+            @include breakpoint(tablet){
+                width: 398px;
+            }
+            @include breakpoint(desktop){
+                font-size: 22px;
+                font-weight: 100;
+                width: 540px;
+            }
+        }
+    }
+    .footer{
+        background-color: $color-brown;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        @include breakpoint(tablet){
+            display: flex;
+            flex-direction: row;
+            height: 216px;
+            justify-content: space-between;
+            align-items:baseline ;
+        }
+        @include breakpoint(desktop){
+            height: 244px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        &-title{
+            width: 110px;
+            height: 40px;
+            margin-bottom: 30px;
+            @include breakpoint(tablet){
+                margin-top: 30px;
+            }
+            @include breakpoint(desktop){
+                margin-left: 120px;
+                scale: 150%;
+            }
+        }
+        &-desc{
+            font-size: 16px;
+            font-family: $outfit-font;
+            font-weight: 200;
+            margin-bottom: 40px;
+            @include breakpoint(tablet){
+                width: 281px;
+            }
+            @include breakpoint(desktop){
+                margin-left: 180px;
+                margin-right: 270px;
+                width: 430px;
+                font-size: 18px;
+            }
+        }
+        &-icons{
+            display: flex;
+            gap: 25px;
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
