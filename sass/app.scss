@@ -561,6 +561,9 @@ a{
         width: 768px;
     }
     @include breakpoint(desktop){
+        width: 1024px;
+    }
+    @include breakpoint(largedesktop){
         width: 1440px;
     }
     .back-to-home{
@@ -568,6 +571,9 @@ a{
         position: absolute;
         left: 30px;
         @include breakpoint(desktop){
+            left: 130px;
+        }
+        @include breakpoint(largedesktop){
             left: 160px;
         }
         .arrow-btn{
@@ -592,6 +598,10 @@ a{
             width: 768px;
         }
         @include breakpoint(desktop){
+            width: 1025px;
+            height: 600px;
+        }
+        @include breakpoint(largedesktop){
             width: 1440px;
             height: 600px;
         }
@@ -603,6 +613,11 @@ a{
             display: flex;
         }
         @include breakpoint(desktop){
+            display: flex;
+            height: 500px;
+            padding: 70px 110px;
+        }
+        @include breakpoint(largedesktop){
             display: flex;
             height: 548px;
             padding: 90px 150px;
@@ -618,6 +633,10 @@ a{
                 margin-right: 60px;
             }
             @include breakpoint(desktop){
+                font-size: 70px;
+                margin-right: 100px;
+            }
+            @include breakpoint(largedesktop){
                 font-size: 70px;
                 margin-right: 300px;
             }
@@ -687,6 +706,13 @@ a{
             align-items:baseline ;
         }
         @include breakpoint(desktop){
+            height: 200px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @include breakpoint(largedesktop){
             height: 244px;
             display: flex;
             flex-direction: row;
@@ -700,6 +726,10 @@ a{
                 margin-top: 30px;
             }
             @include breakpoint(desktop){
+                margin-left: 20px;
+                scale: 150%;
+            }
+            @include breakpoint(largedesktop){
                 margin-left: 120px;
                 scale: 150%;
             }
@@ -713,15 +743,21 @@ a{
                 width: 281px;
             }
             @include breakpoint(desktop){
-                margin-left: 180px;
-                margin-right: 270px;
+                margin-left: 70px;
+                margin-right: 70px;
+                width: 430px;
+                font-size: 18px;
+            }
+            @include breakpoint(largedesktop){
+                margin-left: 10px;
+                margin-right: 10px;
                 width: 430px;
                 font-size: 18px;
             }
         }
         &-icons{
             display: flex;
-            gap: 25px;
+            column-gap: 35px;
             img{
                 width: 30px;
                 height: 30px;
