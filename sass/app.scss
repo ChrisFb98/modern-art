@@ -29,7 +29,11 @@ a{
     }
     @include breakpoint(desktop){
         width: 1024px;
-        height: 2554px;
+        height: 100%;
+    }
+    @include breakpoint(largedesktop){
+        width: 1440px;
+        height: 100%;
     }
     .old-lady{
         margin-bottom: 20px;
@@ -60,8 +64,19 @@ a{
             width: 540px;
             height: 800px;
             position: absolute;
+            right: 200px;
+            top: -60px;
+            z-index: 0;
+            scale: 0.85;
+        }
+        @include breakpoint(largedesktop){
+            display: flex;
+            width: 540px;
+            height: 800px;
+            position: absolute;
             right: 400px;
             z-index: 0;
+            scale: 1;
         }
     }
     .old-lady-wrapper{
@@ -76,8 +91,13 @@ a{
                 height: 800px;
                 background-color: black;
                 position: absolute;
-                left: 0px;
+                left: -40px;
+                top: -60px;
                 z-index: 0;
+                scale: 0.85;
+                @include breakpoint(largedesktop){
+                    scale: 1;
+                }
             }
         }
     }
@@ -94,10 +114,14 @@ a{
             margin-bottom: 250px;
         }
         @include breakpoint(desktop){
-            margin-left: 220px;
-            margin-top: -640px;
+            margin-left: 20px;
+            margin-top: -660px;
+            margin-bottom: 250px;
+        }
+        @include breakpoint(largedesktop){
+            margin-left: 20px;
+            margin-top: -660px;
             margin-bottom: 300px;
-            
         }
         &-title{
             font-weight: 900;
@@ -109,8 +133,16 @@ a{
             @include breakpoint(desktop){
                 color: white;
                 font-weight: 900;
+                font-size: 66px;
+                width: 520px;
+                margin-left: 40px;
+            }
+            @include breakpoint(largedesktop){
+                color: white;
+                font-weight: 900;
                 font-size: 96px;
                 width: 520px;
+                margin-left: 200px;
             }
         }
         &-desc{
@@ -126,7 +158,15 @@ a{
                 font-size: 22px;
                 font-weight: 200;
                 width: 350px;
-                margin-left: 730px;
+                margin-left: 650px;
+                margin-top: -180px;
+                line-height: 1.5;
+            }
+            @include breakpoint(largedesktop){
+                font-size: 22px;
+                font-weight: 200;
+                width: 350px;
+                margin-left: 950px;
                 margin-top: -180px;
                 line-height: 1.5;
             }
@@ -137,7 +177,11 @@ a{
             margin-top: 30px;
             margin-bottom: 130px;
             @include breakpoint(desktop){
-                margin-left: 730px;
+                margin-left: 650px;
+                margin-top: 40px;
+            }
+            @include breakpoint(largedesktop){
+                margin-left: 950px;
                 margin-top: 40px;
             }
             .btn-location{
@@ -168,6 +212,11 @@ a{
             margin-bottom: 20px;
             column-gap: 150px;
         }
+        @include breakpoint(largedesktop){
+            column-gap: 180px;
+            margin-left: 160px;
+            margin-bottom: 60px;
+        }
         &-img{
             width: 343px;
             margin-left: auto;
@@ -184,12 +233,15 @@ a{
         }
         &-img-desk{
             display: none;
-                @include breakpoint(desktop){
-                display: flex;
-                width: 635px;
-                width: 400px;
-                grid-column: 2 / span 1;
-                grid-row: 1/ span 1;
+            @include breakpoint(desktop){
+            display: flex;
+            width: 635px;
+            width: 400px;
+            grid-column: 2 / span 1;
+            grid-row: 1/ span 1;
+        }
+            @include breakpoint(largedesktop){
+                scale: 1.75;
             }
         }
         &-container{
@@ -201,6 +253,9 @@ a{
             @include breakpoint(desktop){
                 grid-column: 1 / span 1;
                 grid-row: 1 / span 1;
+            }
+            @include breakpoint(largedesktop){
+                
             }
         }
         &-title{
@@ -257,6 +312,17 @@ a{
         }
         @include breakpoint(desktop){
             display: grid;
+            grid-template-columns: 500px 1fr;
+            grid-template-rows: 320px 345px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 160px;
+            margin-top: 20px;
+            column-gap: 50px;
+            row-gap: 20px;
+        }
+        @include breakpoint(largedesktop){
+            display: grid;
             grid-template-columns: 635px 1fr;
             grid-template-rows: 320px 345px;
             margin-left: auto;
@@ -278,6 +344,12 @@ a{
                 height: 720px;
             }
             @include breakpoint(desktop){
+                grid-template-columns: 1 / span 1;
+                grid-row: 1 / span 2;
+                width: 535px;
+                height: 720px;
+            }
+            @include breakpoint(largedesktop){
                 grid-template-columns: 1 / span 1;
                 grid-row: 1 / span 2;
                 width: 635px;
@@ -314,6 +386,12 @@ a{
             display: none;
             @include breakpoint(desktop){
                 display: flex;
+                width: 400px;
+                height: 320px;
+            }
+            @include breakpoint(largedesktop){
+                display: flex;
+                width: 445px;
             }
         }
         &-article{
@@ -334,6 +412,11 @@ a{
                 margin-top: -45px;
             }
             @include breakpoint(desktop){
+                width: 400px;
+                height: 377px;
+                padding: 50px 60px;
+            }
+            @include breakpoint(largedesktop){
                 width: 445px;
                 height: 377px;
                 padding: 60px 80px;
@@ -378,7 +461,11 @@ a{
         }
         @include breakpoint(desktop){
             display: flex;
-            align-items: baseline;
+            align-items: center;
+        }
+        @include breakpoint(largedesktop){
+            display: flex;
+            align-items: center;
         }
         &-title{
             width: 250px;
@@ -388,8 +475,13 @@ a{
             }
             @include breakpoint(desktop){
                 width: 200px;
-                margin-left: 100px;
+                margin-left: 30px;
                 font-size: 24px;
+            }
+            @include breakpoint(largedesktop){
+                width: 200px;
+                margin-left: 100px;
+                font-size: 30px;
             }
         }
         &-desc{
@@ -406,10 +498,16 @@ a{
                 margin-right: 100px;
             }
             @include breakpoint(desktop){
-                width: 430px;
+                width: 500px;
                 font-size: 18px;
-                margin-left: 100px;
-                margin-right: 200px;
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+            @include breakpoint(largedesktop){
+                width: 600px;
+                font-size: 18px;
+                margin-left: 90px;
+                margin-right: 90px;
             }
         }
         .facebook{
@@ -419,6 +517,10 @@ a{
             @include breakpoint(desktop){
                 margin-left: 10px;
             }
+            @include breakpoint(largedesktop){
+                width: 40px;
+                height: 40px;
+            }
         }
         .instagram{
             margin-right: 15px;
@@ -427,6 +529,11 @@ a{
             @include breakpoint(desktop){
                 margin-left: 10px;
             }
+            @include breakpoint(largedesktop){
+                margin-left: 30px;
+                width: 40px;
+                height: 40px;
+            }
         }
         .twiter{
             margin-right: 15px;
@@ -434,6 +541,11 @@ a{
             height: 20px;
             @include breakpoint(desktop){
                 margin-left: 10px;
+            }
+            @include breakpoint(largedesktop){
+                margin-left: 30px;
+                width: 40px;
+                height: 40px;
             }
         }
     }
