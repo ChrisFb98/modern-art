@@ -671,16 +671,19 @@ a{
     background-color: white;
     display: flex;
     flex-direction: column;
-    width: 375px;
+    width: 100%;
     position: relative;
     @include breakpoint(tablet){
-        width: 768px;
+        width: 100%;
     }
     @include breakpoint(desktop){
-        width: 1024px;
+        width: 100%;
     }
     @include breakpoint(largedesktop){
         width: 1440px;
+    }
+    @include breakpoint(largedesktop){
+        width: 100%;
     }
     .back-to-home{
         display: flex;
@@ -708,17 +711,21 @@ a{
         }
     }
     iframe{
-        width: 375px;
+        width: 100%;
         height: 550px;
         @include breakpoint(tablet){
-            width: 768px;
+            width: 100%;
         }
         @include breakpoint(desktop){
-            width: 1025px;
+            width: 100%;
             height: 600px;
         }
         @include breakpoint(largedesktop){
-            width: 1440px;
+            width: 100%;
+            height: 600px;
+        }
+        @include breakpoint(4k){
+            width: 100%;
             height: 600px;
         }
     }
